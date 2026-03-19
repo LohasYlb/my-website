@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>伟新农业发展有限公司 - 专业农业服务提供商</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      if (window.location.host === '运城农业网.cn') {
+        window.location.href = 'https://www.运城农业网.cn' + window.location.pathname;
+      }
+    </script>
     <link
       href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css"
       rel="stylesheet"
@@ -790,9 +795,6 @@
 
     <!-- JavaScript - 新增导航选中逻辑 -->
     <script>
-       if (window.location.host === '运城农业网.cn') {
-          window.location.href = 'https://www.运城农业网.cn' + window.location.pathname;
-      }
       // 移动端菜单切换
       const menuBtn = document.getElementById("menuBtn");
       const mobileMenu = document.getElementById("mobileMenu");
