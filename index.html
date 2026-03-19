@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>伟新农业发展有限公司 - 专业农业服务提供商</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+    <script>
+      // Tailwind 配置
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#2E7D32", // 农业绿
+              secondary: "#FF9800", // 活力橙
+              dark: "#1B5E20",
+              light: "#E8F5E9",
+            },
+            fontFamily: {
+              sans: ["Inter", "system-ui", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .content-auto {
+          content-visibility: auto;
+        }
+        .text-shadow {
+          text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        .bg-overlay {
+          background-color: rgba(0, 0, 0, 0.5);
+        }
+        .nav-gradient {
+          background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%);
+        }
+        .nav-link-active {
+          color: white !important;
+          font-weight: 600;
+        }
+      }
+    </style>
+  </head>
+  <body class="font-sans bg-gray-50 text-gray-800">
+    <!-- 导航栏 - 新增渐变背景 + 选中样式 -->
+    <header class="sticky top-0 z-50 nav-gradient shadow-md">
+      <nav class="container mx-auto px-4 py-3 flex justify-between items-center">
+        <a href="#" class="flex items-center space-x-2">
+          <i class="fa fa-leaf text-white text-2xl"></i>
+          <span class="text-xl font-bold text-white">伟新农业</span>
+        </a>
+
+        <!-- 移动端菜单按钮 -->
+        <button id="menuBtn" class="md:hidden text-white focus:outline-none">
+          <i class="fa fa-bars text-xl"></i>
+        </button>
+
+        <!-- 桌面端导航 - 新增选中样式控制 -->
+        <ul class="hidden md:flex space-x-8">
+          <li>
+            <a
+              href="#home"
+              class="text-white/90 hover:text-white transition nav-link"
+              data-target="home"
+              >首页</a
+            >
+          </li>
+          <li>
+            <a
+              href="#about"
+              class="text-white/90 hover:text-white transition nav-link"
+              data-target="about"
+              >公司简介</a
+            >
+          </li>
+          <li>
+            <a
+              href="#services"
+              class="text-white/90 hover:text-white transition nav-link"
+              data-target="services"
+              >服务项目</a
+            >
+          </li>
+          <li>
+            <a
+              href="#equipment"
+              class="text-white/90 hover:text-white transition nav-link"
+              data-target="equipment"
+              >设备展示</a
+            >
+          </li>
+          <li>
+            <a
+              href="#team"
+              class="text-white/90 hover:text-white transition nav-link"
+              data-target="team"
+              >技术团队</a
+            >
+          </li>
+          <li>
+            <a
+              href="#contact"
+              class="text-white/90 hover:text-white transition nav-link"
+              data-target="contact"
+              >联系我们</a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <!-- 移动端导航菜单 - 同步渐变背景 -->
+      <div id="mobileMenu" class="md:hidden hidden nav-gradient border-t border-white/20">
+        <ul class="px-4 py-2 space-y-3">
+          <li>
+            <a
+              href="#home"
+              class="block py-2 text-white/90 hover:text-white nav-link"
+              data-target="home"
+              >首页</a
+            >
+          </li>
+          <li>
+            <a
+              href="#about"
+              class="block py-2 text-white/90 hover:text-white nav-link"
+              data-target="about"
+              >公司简介</a
+            >
+          </li>
+          <li>
+            <a
+              href="#services"
+              class="block py-2 text-white/90 hover:text-white nav-link"
+              data-target="services"
+              >服务项目</a
+            >
+          </li>
+          <li>
+            <a
+              href="#equipment"
+              class="block py-2 text-white/90 hover:text-white nav-link"
+              data-target="equipment"
+              >设备展示</a
+            >
+          </li>
+          <li>
+            <a
+              href="#team"
+              class="block py-2 text-white/90 hover:text-white nav-link"
+              data-target="team"
+              >技术团队</a
+            >
+          </li>
+          <li>
+            <a
+              href="#contact"
+              class="block py-2 text-white/90 hover:text-white nav-link"
+              data-target="contact"
+              >联系我们</a
+            >
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- 英雄区 -->
+    <section
+      id="home"
+      class="relative h-[80vh] bg-cover bg-center"
+      style="background-image: url('https://picsum.photos/id/142/1920/1080')"
+    >
+      <div class="absolute inset-0 bg-overlay"></div>
+      <div class="container mx-auto px-4 h-full flex flex-col justify-center">
+        <h1 class="text-[clamp(2rem,5vw,4rem)] font-bold text-white text-shadow mb-4 max-w-3xl">
+          专业农业服务 助力农业发展
+        </h1>
+        <p class="text-[clamp(1rem,2vw,1.25rem)] text-white text-shadow mb-8 max-w-2xl">
+          提供土地托管、耕种、收割、技术指导等一站式农业服务，合作共赢，共创农业新篇章
+        </p>
+        <a
+          href="#contact"
+          class="inline-block bg-secondary hover:bg-secondary/90 text-white font-semibold px-8 py-3 rounded-lg transition transform hover:scale-105 shadow-lg"
+        >
+          立即咨询 <i class="fa fa-arrow-right ml-2"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- 公司简介 -->
+    <section id="about" class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12 text-primary">公司简介</h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+          <div>
+            <img
+              src="https://picsum.photos/id/251/800/600"
+              alt="伟新农业办公环境"
+              class="rounded-lg shadow-lg w-full h-auto"
+            />
+          </div>
+          <div class="space-y-4">
+            <p class="text-lg">
+              伟新农业发展有限公司成立于2024年5月份，公司位于新绛县南庄村，是一家专注于现代农业服务的专业公司。
+            </p>
+            <p>公司拥有雄厚的技术实力和先进的农业机械设备：</p>
+            <ul class="list-disc list-inside space-y-2 text-gray-700">
+              <li>农艺师1名，外聘杨凌农科院农艺教授2名，讲师多名</li>
+              <li>各种型号拖拉机78台（750-2104各种型号）</li>
+              <li>耕地机械二十多台（翻地梨地、深松、粉杆、出药材筛、种机）</li>
+              <li>收割机5台（玉米、小麦、油菜）</li>
+              <li>无人机5台（打药、插洒）</li>
+              <li>一百多亩盐碱地改良试点（现种植油菜用于改良土壤研究）</li>
+            </ul>
+            <p>
+              公司秉承"专业、高效、创新、共赢"的经营理念，致力于为广大农户和农业合作社提供优质的农业服务。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 服务项目 -->
+    <section id="services" class="py-16 bg-light">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12 text-primary">服务项目</h2>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- 服务卡片1 -->
+          <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+            <img
+              src="./image/土地托管.jpg"
+              alt="土地托管服务"
+              class="w-full  object-cover"
+              style="width: 100%;height: 60%;"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-3 text-primary">土地托管服务</h3>
+              <p class="text-gray-700 mb-4">
+                承接大地块托管，提供全程耕种、管理、收割一体化服务，让您省心省力。
+              </p>
+              <ul class="list-disc list-inside text-gray-600 space-y-1 mb-4">
+                <li>全程托管</li>
+                <li>半程托管</li>
+                <li>定制化托管方案</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 服务卡片2 -->
+          <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+            <img
+              src="./image/耕种收割.jpg"
+              alt="耕种收割服务"
+              class="w-full  object-cover"
+              style="width: 100%;height: 60%;"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-3 text-primary">耕种收割服务</h3>
+              <p class="text-gray-700 mb-4">
+                专业的耕种收割服务，配备先进设备，确保作业质量和效率。
+              </p>
+              <ul class="list-disc list-inside text-gray-600 space-y-1 mb-4">
+                <li>深松、深翻、平地</li>
+                <li>玉米、小麦、油菜收割</li>
+                <li>精准播种</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 服务卡片3 -->
+          <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+            <img
+              src="./image/无人机农业.jpg"
+              alt="无人机服务"
+              class="w-full  object-cover"
+              style="width: 100%;height: 60%;"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-3 text-primary">无人机服务</h3>
+              <p class="text-gray-700 mb-4">
+                利用先进的无人机技术，提供精准的打药、施肥等植保服务。
+              </p>
+              <ul class="list-disc list-inside text-gray-600 space-y-1 mb-4">
+                <li>无人机打药</li>
+                <li>无人机洒化肥</li>
+                <li>精准植保作业</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 服务卡片4 -->
+          <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+            <img
+              src="./image/种植技术指导.jpg"
+              alt="种植技术指导"
+              class="w-full  object-cover"
+              style="width: 100%;height: 60%;"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-3 text-primary">种植技术指导</h3>
+              <p class="text-gray-700 mb-4">
+                由专业教授提供上门授课，指导蔬菜、油菜等作物种植技术。
+              </p>
+              <ul class="list-disc list-inside text-gray-600 space-y-1 mb-4">
+                <li>蔬菜种植技术指导</li>
+                <li>油菜种植技术指导</li>
+                <li>种子培育技术指导</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 服务卡片5 -->
+          <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+            <img
+              src="./image/土壤改良.jpg"
+              alt="土壤改良"
+              class="w-full h-58 object-cover"
+              style="width: 100%;height: 60%;"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-3 text-primary">土壤改良</h3>
+              <p class="text-gray-700 mb-4">针对盐碱地等特殊土壤，提供专业的改良方案和技术支持。</p>
+              <ul class="list-disc list-inside text-gray-600 space-y-1 mb-4">
+                <li>盐碱地改良</li>
+                <li>土壤肥力提升</li>
+                <li>土壤检测分析</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 服务卡片6 -->
+          <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+            <img
+              src="./image/农业技术培训.jpg"
+              alt="技术培训"
+              class="w-full h-68 object-cover"
+              style="width: 100%;height: 60%;"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-3 text-primary">农业技术培训</h3>
+              <p class="text-gray-700 mb-4">
+                专业农业教授上门授课，提升种植户的技术水平和管理能力。
+              </p>
+              <ul class="list-disc list-inside text-gray-600 space-y-1 mb-4">
+                <li>种植技术培训</li>
+                <li>病虫害防治培训</li>
+                <li>现代农业管理培训</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 设备展示 -->
+    <section id="equipment" class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12 text-primary">设备展示</h2>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- 设备1 -->
+          <div
+            class="bg-light rounded-lg overflow-hidden shadow-md hover:shadow-lg transition group"
+          >
+            <div class="h-48 overflow-hidden">
+              <img
+                src="./image/拖拉机.jpg"
+                alt="拖拉机"
+                class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
+              />
+            </div>
+            <div class="p-4 text-center">
+              <h3 class="font-semibold text-lg mb-2 text-primary">拖拉机</h3>
+              <p class="text-gray-700">750-2104各种型号，共8台</p>
+            </div>
+          </div>
+
+          <!-- 设备2 -->
+          <div
+            class="bg-light rounded-lg overflow-hidden shadow-md hover:shadow-lg transition group"
+          >
+            <div class="h-48 overflow-hidden">
+              <img
+                src="./image/耕地机械.jpg"
+                alt="耕地机械"
+                class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
+              />
+            </div>
+            <div class="p-4 text-center">
+              <h3 class="font-semibold text-lg mb-2 text-primary">耕地机械</h3>
+              <p class="text-gray-700">翻地、梨地、深松等，二十多台</p>
+            </div>
+          </div>
+
+          <!-- 设备3 -->
+          <div
+            class="bg-light rounded-lg overflow-hidden shadow-md hover:shadow-lg transition group"
+          >
+            <div class="h-48 overflow-hidden">
+              <img
+                src="./image/收割机.jpg"
+                alt="收割机"
+                class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
+              />
+            </div>
+            <div class="p-4 text-center">
+              <h3 class="font-semibold text-lg mb-2 text-primary">收割机</h3>
+              <p class="text-gray-700">玉米、小麦、油菜收割机，5台</p>
+            </div>
+          </div>
+
+          <!-- 设备4 -->
+          <div
+            class="bg-light rounded-lg overflow-hidden shadow-md hover:shadow-lg transition group"
+          >
+            <div class="h-48 overflow-hidden">
+              <img
+                src="./image/无人机.jpg"
+                alt="无人机"
+                class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
+              />
+            </div>
+            <div class="p-4 text-center">
+              <h3 class="font-semibold text-lg mb-2 text-primary">无人机</h3>
+              <p class="text-gray-700">打药、插洒无人机，5台</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 技术团队 -->
+    <section id="team" class="py-16 bg-light">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12 text-primary">技术团队</h2>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- 团队成员1 -->
+          <div class="bg-white rounded-lg shadow-md overflow-hidden text-center">
+            <img
+              src="https://picsum.photos/id/1005/400/400"
+              alt="农艺师"
+              class="w-full h-64 object-cover object-center"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2 text-primary">高级农艺师</h3>
+              <p class="text-gray-600 mb-4">公司全职农艺师，拥有丰富的一线农业生产经验</p>
+              <div class="flex justify-center space-x-6 text-primary">
+                <!-- 电话图标 -->
+                <div class="relative group cursor-pointer">
+                  <i class="fa fa-phone text-xl"></i>
+                  <!-- 悬浮显示的电话 -->
+                  <div
+                    class="absolute -top-10 left-1/2 -translate-x-1/2 bg-primary text-white px-3 py-1 rounded-lg text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap z-10"
+                  >
+                    13333599387
+                  </div>
+                </div>
+                <!-- 邮箱图标 -->
+                <div class="relative group cursor-pointer">
+                  <i class="fa fa-envelope text-xl"></i>
+                  <!-- 悬浮显示的邮箱 -->
+                  <div
+                    class="absolute -top-10 left-1/2 -translate-x-1/2 bg-primary text-white px-3 py-1 rounded-lg text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap z-10"
+                  >
+                    13333599284@163.com
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 团队成员2 -->
+          <div class="bg-white rounded-lg shadow-md overflow-hidden text-center">
+            <img
+              src="https://picsum.photos/id/1006/400/400"
+              alt="农艺教授"
+              class="w-full h-64 object-cover object-center"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2 text-primary">陈红辉老师</h3>
+              <p class="text-gray-600 mb-4">外聘专家，提供专业的农业技术指导和培训</p>
+              <div class="flex justify-center space-x-6 text-primary">
+                <!-- 电话图标 -->
+                <div class="relative group cursor-pointer">
+                  <i class="fa fa-phone text-xl"></i>
+                  <div
+                    class="absolute -top-10 left-1/2 -translate-x-1/2 bg-primary text-white px-3 py-1 rounded-lg text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap z-10"
+                  >
+                    13333599387
+                  </div>
+                </div>
+                <!-- 邮箱图标 -->
+                <div class="relative group cursor-pointer">
+                  <i class="fa fa-envelope text-xl"></i>
+                  <div
+                    class="absolute -top-10 left-1/2 -translate-x-1/2 bg-primary text-white px-3 py-1 rounded-lg text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap z-10"
+                  >
+                    13333599284@163.com
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 团队成员3 -->
+          <div class="bg-white rounded-lg shadow-md overflow-hidden text-center">
+            <img
+              src="https://picsum.photos/id/1010/400/400"
+              alt="农业讲师"
+              class="w-full h-64 object-cover object-center"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2 text-primary">农业技术讲师</h3>
+              <p class="text-gray-600 mb-4">多名专业讲师，提供种植技术培训和指导</p>
+              <div class="flex justify-center space-x-6 text-primary">
+                <!-- 电话图标 -->
+                <div class="relative group cursor-pointer">
+                  <i class="fa fa-phone text-xl"></i>
+                  <div
+                    class="absolute -top-10 left-1/2 -translate-x-1/2 bg-primary text-white px-3 py-1 rounded-lg text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap z-10"
+                  >
+                    13333599387
+                  </div>
+                </div>
+                <!-- 邮箱图标 -->
+                <div class="relative group cursor-pointer">
+                  <i class="fa fa-envelope text-xl"></i>
+                  <div
+                    class="absolute -top-10 left-1/2 -translate-x-1/2 bg-primary text-white px-3 py-1 rounded-lg text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap z-10"
+                  >
+                    13333599284@163.com
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 联系我们 -->
+    <section id="contact" class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12 text-primary">联系我们</h2>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="bg-light rounded-lg p-8 shadow-md">
+            <h3 class="text-xl font-semibold mb-6 text-primary">联系方式</h3>
+
+            <div class="space-y-4">
+              <div class="flex items-start space-x-4">
+                <i class="fa fa-map-marker text-secondary text-xl mt-1"></i>
+                <div>
+                  <h4 class="font-medium">公司地址</h4>
+                  <p class="text-gray-700">山西省运城市新绛县南庄村</p>
+                </div>
+              </div>
+
+              <!-- 电话 -->
+              <div class="flex items-start space-x-4">
+                <div class="relative group cursor-pointer">
+                  <i class="fa fa-phone text-secondary text-xl mt-1"></i>
+                  <div
+                    class="absolute left-8 top-0 bg-secondary text-white px-3 py-1 rounded-lg text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap z-10"
+                  >
+                    13333599387
+                  </div>
+                </div>
+                <div>
+                  <h4 class="font-medium">联系电话</h4>
+                  <p class="text-gray-700">点击图标查看</p>
+                </div>
+              </div>
+
+              <!-- 邮箱 -->
+              <div class="flex items-start space-x-4">
+                <div class="relative group cursor-pointer">
+                  <i class="fa fa-envelope text-secondary text-xl mt-1"></i>
+                  <div
+                    class="absolute left-8 top-0 bg-secondary text-white px-3 py-1 rounded-lg text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap z-10"
+                  >
+                    13333599284@163.com
+                  </div>
+                </div>
+                <div>
+                  <h4 class="font-medium">电子邮箱</h4>
+                  <p class="text-gray-700">点击图标查看</p>
+                </div>
+              </div>
+
+              <div class="flex items-start space-x-4">
+                <i class="fa fa-clock-o text-secondary text-xl mt-1"></i>
+                <div>
+                  <h4 class="font-medium">营业时间</h4>
+                  <p class="text-gray-700">周一至周日 8:00-18:00</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 关注我们 -->
+            <div class="mt-8">
+              <h4 class="font-medium mb-4">关注我们</h4>
+              <div class="flex space-x-6">
+                <!-- 微信 -->
+                <div class="relative group cursor-pointer">
+                  <a
+                    href="#"
+                    class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center hover:bg-dark transition"
+                  >
+                    <i class="fa fa-weixin"></i>
+                  </a>
+                  <div
+                    class="absolute -bottom-8 left-1/2 -translate-x-1/2 bg-primary text-white px-3 py-1 rounded-lg text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap z-10"
+                  >
+                    微信：13333599387
+                  </div>
+                </div>
+                <!-- 微博 -->
+                <div class="relative group cursor-pointer">
+                  <a
+                    href="#"
+                    class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center hover:bg-dark transition"
+                  >
+                    <i class="fa fa-weibo"></i>
+                  </a>
+                  <div
+                    class="absolute -bottom-8 left-1/2 -translate-x-1/2 bg-primary text-white px-3 py-1 rounded-lg text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap z-10"
+                  >
+                    微博：伟新农业
+                  </div>
+                </div>
+                <!-- QQ -->
+                <div class="relative group cursor-pointer">
+                  <a
+                    href="#"
+                    class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center hover:bg-dark transition"
+                  >
+                    <i class="fa fa-qq"></i>
+                  </a>
+                  <div
+                    class="absolute -bottom-8 left-1/2 -translate-x-1/2 bg-primary text-white px-3 py-1 rounded-lg text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap z-10"
+                  >
+                    QQ：1134183516
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 留言表单部分不变 -->
+          <div class="bg-light rounded-lg p-8 shadow-md">
+            <h3 class="text-xl font-semibold mb-6 text-primary">留言咨询</h3>
+
+            <form id="contactForm" class="space-y-4">
+              <div>
+                <label for="name" class="block text-gray-700 mb-2">姓名</label>
+                <input
+                  type="text"
+                  id="name"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                  placeholder="请输入您的姓名"
+                />
+              </div>
+
+              <div>
+                <label for="phone" class="block text-gray-700 mb-2">电话</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                  placeholder="请输入您的联系电话"
+                />
+              </div>
+
+              <div>
+                <label for="service" class="block text-gray-700 mb-2">意向服务</label>
+                <select
+                  id="service"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                >
+                  <option value="">请选择意向服务</option>
+                  <option value="land托管">土地托管</option>
+                  <option value="耕种收割">耕种收割</option>
+                  <option value="无人机服务">无人机服务</option>
+                  <option value="技术指导">种植技术指导</option>
+                  <option value="土壤改良">土壤改良</option>
+                  <option value="其他">其他服务</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="message" class="block text-gray-700 mb-2">留言内容</label>
+                <textarea
+                  id="message"
+                  rows="4"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                  placeholder="请详细描述您的需求..."
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                class="w-full bg-primary hover:bg-dark text-white font-semibold py-3 rounded-lg transition"
+              >
+                提交留言 <i class="fa fa-paper-plane ml-2"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white py-12">
+      <div class="container mx-auto px-4">
+        <div class="grid md:grid-cols-4 gap-8">
+          <div>
+            <h3 class="text-xl font-bold mb-4 flex items-center space-x-2">
+              <i class="fa fa-leaf"></i>
+              <span>伟新农业</span>
+            </h3>
+            <p class="text-gray-300 mb-4">
+              专业的农业服务提供商，致力于推动农业现代化发展，与广大农户合作共赢。
+            </p>
+            <p class="text-gray-400 text-sm">© 2024 伟新农业发展有限公司 版权所有</p>
+          </div>
+
+          <div>
+            <h4 class="text-lg font-semibold mb-4">快速链接</h4>
+            <ul class="space-y-2">
+              <li><a href="#home" class="text-gray-300 hover:text-white transition">首页</a></li>
+              <li>
+                <a href="#about" class="text-gray-300 hover:text-white transition">公司简介</a>
+              </li>
+              <li>
+                <a href="#services" class="text-gray-300 hover:text-white transition">服务项目</a>
+              </li>
+              <li>
+                <a href="#equipment" class="text-gray-300 hover:text-white transition">设备展示</a>
+              </li>
+              <li>
+                <a href="#contact" class="text-gray-300 hover:text-white transition">联系我们</a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-lg font-semibold mb-4">服务项目</h4>
+            <ul class="space-y-2">
+              <li><a href="#" class="text-gray-300 hover:text-white transition">土地托管</a></li>
+              <li><a href="#" class="text-gray-300 hover:text-white transition">耕种收割</a></li>
+              <li><a href="#" class="text-gray-300 hover:text-white transition">无人机服务</a></li>
+              <li><a href="#" class="text-gray-300 hover:text-white transition">技术指导</a></li>
+              <li><a href="#" class="text-gray-300 hover:text-white transition">土壤改良</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-lg font-semibold mb-4">联系我们</h4>
+            <ul class="space-y-2 text-gray-300">
+              <li class="flex items-center space-x-2">
+                <i class="fa fa-map-marker"></i>
+                <span>新绛县南庄村</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <i class="fa fa-phone"></i>
+                <span>13333599387</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <i class="fa fa-envelope"></i>
+                <span>13333599284@163.com</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400 text-sm">
+          本网站由伟新农业发展有限公司提供 | 晋ICP备XXXX号
+        </div>
+      </div>
+    </footer>
+
+    <!-- JavaScript - 新增导航选中逻辑 -->
+    <script>
+      // 移动端菜单切换
+      const menuBtn = document.getElementById("menuBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
+
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      // 平滑滚动
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute("href");
+          const targetElement = document.querySelector(targetId);
+
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: "smooth",
+            });
+
+            mobileMenu.classList.add("hidden");
+            setActiveNav(targetId.substring(1));
+          }
+        });
+      });
+
+      // 表单提交
+      const contactForm = document.getElementById("contactForm");
+      contactForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const name = document.getElementById("name").value;
+        const phone = document.getElementById("phone").value;
+        if (!name || !phone) {
+          alert("请填写姓名和联系电话！");
+          return;
+        }
+        alert("留言提交成功！我们会尽快与您联系。");
+        contactForm.reset();
+      });
+
+      // 导航滚动样式
+      window.addEventListener("scroll", () => {
+        const header = document.querySelector("header");
+        if (window.scrollY > 50) {
+          header.classList.add("py-2");
+          header.classList.remove("py-3");
+        } else {
+          header.classList.add("py-3");
+          header.classList.remove("py-2");
+        }
+        updateActiveNavOnScroll();
+        toggleBackToTop();
+      });
+
+      // 导航高亮
+      function setActiveNav(targetId) {
+        document.querySelectorAll(".nav-link").forEach((link) => {
+          link.classList.remove("nav-link-active");
+        });
+        const activeLink = document.querySelector(`.nav-link[data-target="${targetId}"]`);
+        if (activeLink) activeLink.classList.add("nav-link-active");
+      }
+
+      function updateActiveNavOnScroll() {
+        const sections = ["home", "about", "services", "equipment", "team", "contact"];
+        let current = "home";
+        sections.forEach((id) => {
+          const el = document.getElementById(id);
+          if (el) {
+            const r = el.getBoundingClientRect();
+            if (r.top <= 100 && r.bottom >= 100) current = id;
+          }
+        });
+        setActiveNav(current);
+      }
+
+      // ========== 回到顶部按钮 ==========
+      function toggleBackToTop() {
+        const topBtn = document.getElementById("backToTop");
+        if (window.scrollY > 300) {
+          topBtn.classList.remove("opacity-0", "invisible");
+          topBtn.classList.add("opacity-100", "visible");
+        } else {
+          topBtn.classList.add("opacity-0", "invisible");
+          topBtn.classList.remove("opacity-100", "visible");
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        // 插入回到顶部按钮
+        const backBtn = document.createElement("button");
+        backBtn.id = "backToTop";
+        backBtn.title = "回到顶部";
+        backBtn.innerHTML = '<i class="fa fa-arrow-up"></i>';
+        backBtn.className =
+          "fixed right-6 bottom-8 bg-primary hover:bg-dark text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 z-50 opacity-0 invisible";
+        document.body.appendChild(backBtn);
+
+        // 点击回到顶部
+        backBtn.addEventListener("click", () => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+
+        setActiveNav("home");
+        toggleBackToTop();
+      });
+    </script>
+  </body>
+</html>
